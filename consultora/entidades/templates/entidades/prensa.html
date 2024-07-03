@@ -1,0 +1,31 @@
+{% extends 'entidades/index.html' %}
+
+{% block titulo %}
+<h1 class="display-5 fw-bolder text-white mb-2">Prensa</h1>
+<p class="lead text-white-50 mb-4">A continuación se presentan las principales salidas de IES Investigaciones Económicas Sectoriales en los medios gráficos nacionales e internacionales</p>
+{% endblock titulo %}
+
+{% block contenido %}
+<h2>Últimas salidas en los medios</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Noticia</th>
+            <th>Medio</th>
+            <th>Link</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for p in prensa  %}
+        <tr>
+            <td>{{ p.id }}</td>
+            <td>{{ p.TituloNoticia }}</td>
+            <td>{{ p.medio }}</td>
+            <td>{{ p.LinkNoticia }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock contenido %}
